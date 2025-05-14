@@ -7,7 +7,7 @@ public static class Palabra
 
     public Palabra(string palabra, List <char> letras)
     {
-        this.palabra = "Procesador";
+        this.palabra = palabra;
         this.letras = letras;
     }
 }

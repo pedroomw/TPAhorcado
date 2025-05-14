@@ -6,16 +6,30 @@ namespace TPAhorcado.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
-
     public IActionResult Index()
     {
+        Partido.InicializarPartido();
+        ViewBag.Palabra = Partido.Palabra;
+
         return View();
+    }
+
+    public IActionResult GuardarCambios(char letra)
+    {
+        int i = 0;
+        int pos = null;
+        while (pos == null && i < Palabra.letras.Count)
+        {
+            if(letra = Palabra.letras[i])
+            {
+                pos = i;
+            }
+        }
+    }
+
+    public IActionResult GuardarPalabra(string letra)
+    {
+
     }
 
     public IActionResult Privacy()
@@ -23,9 +37,4 @@ public class HomeController : Controller
         return View();
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
 }
