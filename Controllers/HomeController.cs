@@ -8,33 +8,27 @@ public class HomeController : Controller
 {
     public IActionResult Index()
     {
-        Partido.InicializarPartido();
-        ViewBag.Palabra = Partido.Palabra;
-
+        Partido partido = new Partido();
+        partido.InicializarPartido();
+        ViewBag.Partido = partido;
+        ViewBag.Palabra = partido.palabra;
         return View();
     }
 
-    public IActionResult GuardarCambios(char letra)
+    public IActionResult IntentarLetra(string letra)
     {
-        int i = 0;
-        int pos = null;
-        while (pos == null && i < Palabra.letras.Count)
-        {
-            if(letra = Palabra.letras[i])
-            {
-                pos = i;
-            }
-        }
+        ViewBag.Partido.actualizarIntento(letra);
     }
 
-    public IActionResult GuardarPalabra(string letra)
-    {
-
-    }
 
     public IActionResult Privacy()
     {
         return View();
+    }
+
+     public void mostrarLetra (char letra)
+    {
+       
     }
 
 }

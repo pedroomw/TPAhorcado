@@ -1,6 +1,6 @@
 namespace TPAhorcado;
 
-public static class Palabra
+public class Palabra
 {
     public string palabra {get; private set;}
     public List <char> letras {get; private set;}

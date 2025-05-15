@@ -1,27 +1,54 @@
 namespace TPAhorcado;
 
-public static class Partido
+public class Partido
 {
-    public Palabra palabra {get; private set;}
-    public int intentos {get; private set;}
-    public bool resultado {get; private set;}
+    public string palabra { get; private set; }
+    public bool resultado { get; private set; }
+    public List<char> letrasAdivinadas { get; private set; }
+    public string palabraActual { get; private set; }
+    public char[] palabraActualVector { get; set; }
+    public int intentos{get; set;}
 
-    public InicializarPartido( Palabra palabra, List <char> letras)
+
+    public void InicializarPartido()
     {
-        List<char> letras = new List<char>();
-        letras.Add(new char("P"));
-        letras.Add(new char("R"));
-        letras.Add(new char("O"));
-        letras.Add(new char("C"));
-        letras.Add(new char("E"));
-        letras.Add(new char("S"));
-        letras.Add(new char("A"));
-        letras.Add(new char("D"));
-    
-
-
-        palabra = new Palabra ("Procesador", letras);
+        palabra = "Procesador"; // Palabra a adivinar
         this.intentos = 0;
         this.resultado = false;
+        inializarPalabraActual();
+
     }
-}
+    public void inializarPalabraActual()
+    {
+        letrasAdivinadas = new List<char>();
+        for(int i = 0; i < palabra.Length; i++){
+            palabraActualVector[i] =  '_';
+            palabraActual += palabraActualVector[i];
+        }
+    }
+
+    public void ActualizarIntento(char letraIngresada)
+    {
+        intentosLetra.Add(letraIngresada);
+
+        if (palabra.Contains(letraIngresada))
+        {
+            letrasAdivinadas.Add(letraIngresada);
+            actualizarPalabra(letraIngresada);
+        }
+    }
+
+
+    private void actualizarPalabra(char letraIngresada)
+    {
+        palabraActual = "";
+        for (int i = 0; i < palabra.Length; i++)
+        {
+            if (palabra[i] == letraIngresada)
+            {
+                palabraActualVector[i] = letraIngresada; // Reemplazar guión bajo con la letra acertada
+                letrasAdivinadas.Add(letraIngresada);
+            }
+            palabraActual += palabraActualVector[i];
+        }
+    }
