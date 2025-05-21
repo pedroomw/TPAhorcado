@@ -8,7 +8,9 @@ public class HomeController : Controller
 {
     public IActionResult Index()
     {
+       if (Partido.palabraActual == null)
         Partido.InicializarPartido();
+        
         ViewBag.LetrasAdivinadas = Partido.letrasAdivinadas;
         ViewBag.Palabra = Partido.palabra;
         ViewBag.IntentosLetra = Partido.intentosLetra;
@@ -23,7 +25,7 @@ public class HomeController : Controller
     {
         Partido.ActualizarIntento(letra);
         ViewBag.PalabraActual = Partido.palabraActual;
-        return View();
+          return RedirectToAction("Index");
     }
 
 
@@ -47,7 +49,7 @@ public class HomeController : Controller
         } else {
             ViewBag.Resultado = "Perdiste";
         }
-        return View();
+            return RedirectToAction("Index");
 
     }
 

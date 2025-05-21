@@ -11,9 +11,10 @@ public static class Partido
         public static int intentos { get; set; }
 
 
+
     public static void InicializarPartido()
     {
-         palabra = "Procesador"; // Palabra a adivinar
+            palabra = "PROCESADOR"; // Palabra a adivinar
             intentos = 0;
             letrasAdivinadas = new List<char>();
             intentosLetra = new List<char>();
@@ -26,19 +27,28 @@ public static class Partido
         letrasAdivinadas = new List<char>();
         for(int i = 0; i < palabra.Length; i++){
             palabraActualVector[i] =  '_';
-            palabraActual += palabraActualVector[i];
+            palabraActual += palabraActualVector[i] + " ";
         }
+        
     }
 
     public static void ActualizarIntento(char letraIngresada)
     {
-        intentosLetra.Add(letraIngresada);
+        
 
         if (palabra.Contains(letraIngresada))
         {
             letrasAdivinadas.Add(letraIngresada);
             actualizarPalabra(letraIngresada);
+            intentos++;
         }
+
+        else {
+             intentos ++;
+             intentosLetra.Add(letraIngresada);
+        }
+
+        
     }
 
 
