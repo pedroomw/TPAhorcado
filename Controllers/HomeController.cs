@@ -8,16 +8,22 @@ public class HomeController : Controller
 {
     public IActionResult Index()
     {
-        Partido partido = new Partido();
-        partido.InicializarPartido();
-        ViewBag.Partido = partido;
-        ViewBag.Palabra = partido.palabra;
+        Partido.InicializarPartido();
+        ViewBag.LetrasAdivinadas = Partido.letrasAdivinadas;
+        ViewBag.Palabra = Partido.palabra;
+        ViewBag.IntentosLetra = Partido.intentosLetra;
+        ViewBag.PalabraActual = Partido.palabraActual;
+        ViewBag.PalabraActualVector = Partido.palabraActualVector;
+        ViewBag.Intentos = Partido.intentos;
+
         return View();
     }
-
-    public IActionResult IntentarLetra(string letra)
+     [HttpPost]
+    public IActionResult IntentarLetra(char letra)
     {
-        ViewBag.Partido.actualizarIntento(letra);
+        Partido.ActualizarIntento(letra);
+        ViewBag.PalabraActual = Partido.palabraActual;
+        return View();
     }
 
 
@@ -29,6 +35,20 @@ public class HomeController : Controller
      public void mostrarLetra (char letra)
     {
        
+    }
+    
+     [HttpPost]
+    public IActionResult IntentarPalabra(string palabra)
+    {
+        bool resultado = Partido.ArriesgarPalabra(palabra);
+        if (resultado == true)
+        {
+            ViewBag.Resultado = "Ganaste";
+        } else {
+            ViewBag.Resultado = "Perdiste";
+        }
+        return View();
+
     }
 
 }

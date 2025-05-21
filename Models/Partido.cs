@@ -1,24 +1,27 @@
 namespace TPAhorcado;
 
-public class Partido
+public static class Partido
 {
-    public string palabra { get; private set; }
-    public bool resultado { get; private set; }
-    public List<char> letrasAdivinadas { get; private set; }
-    public string palabraActual { get; private set; }
-    public char[] palabraActualVector { get; set; }
-    public int intentos{get; set;}
+ 
+        public static string palabra { get; private set; }
+        public static List<char> letrasAdivinadas { get; private set; }
+        public static List<char> intentosLetra { get; private set; }
+        public static string palabraActual { get; private set; }
+        public static char[] palabraActualVector { get; set; }
+        public static int intentos { get; set; }
 
 
-    public void InicializarPartido()
+    public static void InicializarPartido()
     {
-        palabra = "Procesador"; // Palabra a adivinar
-        this.intentos = 0;
-        this.resultado = false;
-        inializarPalabraActual();
-
+         palabra = "Procesador"; // Palabra a adivinar
+            intentos = 0;
+            letrasAdivinadas = new List<char>();
+            intentosLetra = new List<char>();
+            palabraActualVector = new char[palabra.Length];
+            palabraActual = "";
+            inicializarPalabraActual();
     }
-    public void inializarPalabraActual()
+    public static void inicializarPalabraActual()
     {
         letrasAdivinadas = new List<char>();
         for(int i = 0; i < palabra.Length; i++){
@@ -27,7 +30,7 @@ public class Partido
         }
     }
 
-    public void ActualizarIntento(char letraIngresada)
+    public static void ActualizarIntento(char letraIngresada)
     {
         intentosLetra.Add(letraIngresada);
 
@@ -39,7 +42,7 @@ public class Partido
     }
 
 
-    private void actualizarPalabra(char letraIngresada)
+    private static void actualizarPalabra(char letraIngresada)
     {
         palabraActual = "";
         for (int i = 0; i < palabra.Length; i++)
@@ -47,8 +50,25 @@ public class Partido
             if (palabra[i] == letraIngresada)
             {
                 palabraActualVector[i] = letraIngresada; // Reemplazar guión bajo con la letra acertada
-                letrasAdivinadas.Add(letraIngresada);
+               
             }
             palabraActual += palabraActualVector[i];
         }
     }
+
+   
+         public static bool ArriesgarPalabra(string palabraIngresada)
+        {
+            if (palabraIngresada == palabra)
+            {
+                palabraActual = palabra;
+                return true;
+            }
+            else
+            {
+              
+                return false;
+            }
+        }
+    
+}

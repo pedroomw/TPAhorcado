@@ -2,7 +2,26 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<body class="Index">
+    <h1>¡Bienvenido!</h1>
+    <p>Este es el juego de ahorcado</p>
+    
+
+    <form action='@Url.Action("IntentarLetra", "Home")' method="POST">
+        <h2>Arriesgar Letra</h2>
+        <input type="text" name="letra" maxlength="1"  placeholder="Ingrese una letra" />
+        <input type="submit" value="Arriesgar letra" />
+    </form>
+
+
+    <form action = '@Url.Action("IntentarPalabra", "Home")' method="POST">
+            <h2>Arriesgar IntentarPalabra</h2>
+             <input type="text" name="palabra"  placeholder="Ingrese una palabra" />
+              <input type="submit" value="Arriesgar palarbra" />
+    </form>
+
+</body> 
+
+
+
+

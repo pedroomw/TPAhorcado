@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\49552421\\Downloads\\TP03-main\\TPAhorcado\\TPAhorcado\\TPAhorcado.csproj": {}
+    "C:\\Users\\49552421\\TPAhorcado\\TPAhorcado.csproj": {}
   },
   "projects": {
-    "C:\\Users\\49552421\\Downloads\\TP03-main\\TPAhorcado\\TPAhorcado\\TPAhorcado.csproj": {
+    "C:\\Users\\49552421\\TPAhorcado\\TPAhorcado.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\49552421\\Downloads\\TP03-main\\TPAhorcado\\TPAhorcado\\TPAhorcado.csproj",
+        "projectUniqueName": "C:\\Users\\49552421\\TPAhorcado\\TPAhorcado.csproj",
         "projectName": "TPAhorcado",
-        "projectPath": "C:\\Users\\49552421\\Downloads\\TP03-main\\TPAhorcado\\TPAhorcado\\TPAhorcado.csproj",
+        "projectPath": "C:\\Users\\49552421\\TPAhorcado\\TPAhorcado.csproj",
         "packagesPath": "C:\\Users\\49552421\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\49552421\\Downloads\\TP03-main\\TPAhorcado\\TPAhorcado\\obj\\",
+        "outputPath": "C:\\Users\\49552421\\TPAhorcado\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
