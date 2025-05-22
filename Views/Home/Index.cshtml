@@ -2,10 +2,12 @@
     ViewData["Title"] = "Home Page";
 }
 
+<main>
 <body class="Index">
     <h1>¡Bienvenido!</h1>
-    <p>Este es el juego de ahorcado, jugar con mayusculas</p>
-
+    <div class= "subtitulo">
+    <h2>Este es el juego de ahorcado, jugar con MAYUSCULAS</h2>
+ </div>
    <h3> Intentos: @ViewBag.Intentos </h3>
 
     <h3>Intento letra: <h3>
@@ -31,10 +33,11 @@
     <form action = '@Url.Action("IntentarPalabra", "Home")' method="POST">
             <h2>Arriesgar Palabra</h2>
              <input type="text" name="palabra"  placeholder="Ingrese una palabra" />
-              <input type="submit" value="Arriesgar palarbra" />
+              <input type="submit" value="Arriesgar palabra" />
     </form>
 
 </body> 
+</main>
 
 
 

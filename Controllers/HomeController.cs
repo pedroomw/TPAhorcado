@@ -6,6 +6,12 @@ namespace TPAhorcado.Controllers;
 
 public class HomeController : Controller
 {
+
+    public IActionResult Reiniciar()
+    {
+        Index();
+        return View();    
+    }
     public IActionResult Index()
     {
        if (Partido.palabraActual == null)

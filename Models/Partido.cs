@@ -2,11 +2,10 @@ namespace TPAhorcado;
 
 public static class Partido
 {
- 
         public static string palabra { get; private set; }
         public static List<char> letrasAdivinadas { get; private set; }
         public static List<char> intentosLetra { get; private set; }
-        public static string palabraActual { get; private set; }
+        public static string palabraActual { get; set; }
         public static char[] palabraActualVector { get; set; }
         public static int intentos { get; set; }
 
