@@ -62,7 +62,7 @@ public static class Partido
                 palabraActualVector[i] = letraIngresada; // Reemplazar guión bajo con la letra acertada
                
             }
-            palabraActual += palabraActualVector[i];
+            palabraActual += palabraActualVector[i]  + " ";
         }
     }
 

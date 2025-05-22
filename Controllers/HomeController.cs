@@ -25,7 +25,16 @@ public class HomeController : Controller
     {
         Partido.ActualizarIntento(letra);
         ViewBag.PalabraActual = Partido.palabraActual;
-          return RedirectToAction("Index");
+         if (new string(Partido.palabraActualVector) == Partido.palabra)
+    {
+        return View("ganaste");
+    }
+    else
+    {
+        return RedirectToAction("Index");
+    }
+         
+ 
     }
 
 
@@ -42,14 +51,14 @@ public class HomeController : Controller
      [HttpPost]
     public IActionResult IntentarPalabra(string palabra)
     {
-        bool resultado = Partido.ArriesgarPalabra(palabra);
+        bool resultado = (Partido.ArriesgarPalabra(palabra));
         if (resultado == true)
         {
-            ViewBag.Resultado = "Ganaste";
+           return View("ganaste");
         } else {
-            ViewBag.Resultado = "Perdiste";
+           return View("perdiste");
         }
-            return RedirectToAction("Index");
+           
 
     }
 

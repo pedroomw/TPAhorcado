@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\TPAhorcado.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\49552421\\TPAhorcado\\wwwroot\\Imagenes\\Ganaste.jpg",
+      "PackagePath": "staticwebassets\\Imagenes\\Ganaste.jpg"
+    },
+    {
+      "Id": "C:\\Users\\49552421\\TPAhorcado\\wwwroot\\Imagenes\\Perdiste.jpg",
+      "PackagePath": "staticwebassets\\Imagenes\\Perdiste.jpg"
+    },
+    {
       "Id": "C:\\Users\\49552421\\TPAhorcado\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
